@@ -1,8 +1,11 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen } from "@testing-library/react";
+import App from "./App";
 
-test('renders learn react link', () => {
+test("renders input field and add button", () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const inputElement = screen.getByPlaceholderText("Add a new todo");
+  const addButton = screen.getByText("Add");
+
+  expect(inputElement).toBeInTheDocument();
+  expect(addButton).toBeInTheDocument();
 });
